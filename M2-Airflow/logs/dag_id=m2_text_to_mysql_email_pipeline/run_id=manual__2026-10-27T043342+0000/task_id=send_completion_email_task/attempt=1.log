@@ -1,0 +1,19 @@
+[2026-10-27T04:33:51.111+0000] {logging_mixin.py:188} INFO - Changing /opt/airflow/logs/dag_id=m2_text_to_mysql_email_pipeline/run_id=manual__2026-10-27T04:33:42+00:00/task_id=send_completion_email_task permission to 509
+[2026-10-27T04:33:51.146+0000] {logging_mixin.py:188} INFO - Changing /opt/airflow/logs/dag_id=m2_text_to_mysql_email_pipeline/run_id=manual__2026-10-27T04:33:42+00:00/task_id=send_completion_email_task permission to 509
+[2026-10-27T04:33:51.191+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: m2_text_to_mysql_email_pipeline.send_completion_email_task manual__2026-10-27T04:33:42+00:00 [queued]>
+[2026-10-27T04:33:51.199+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: m2_text_to_mysql_email_pipeline.send_completion_email_task manual__2026-10-27T04:33:42+00:00 [queued]>
+[2026-10-27T04:33:51.200+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-10-27T04:33:51.217+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): send_completion_email_task> on 2026-10-27 04:33:42+00:00
+[2026-10-27T04:33:51.222+0000] {standard_task_runner.py:60} INFO - Started process 177 to run task
+[2026-10-27T04:33:51.227+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'm2_text_to_mysql_email_pipeline', 'send_completion_email_task', 'manual__2026-10-27T04:33:42+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/m2_text_to_mysql_dag.py', '--cfg-path', '/tmp/tmpm631l24_']
+[2026-10-27T04:33:51.229+0000] {standard_task_runner.py:88} INFO - Job 4: Subtask send_completion_email_task
+[2026-10-27T04:33:51.414+0000] {logging_mixin.py:188} INFO - Changing /opt/airflow/logs/dag_id=m2_text_to_mysql_email_pipeline/run_id=manual__2026-10-27T04:33:42+00:00/task_id=send_completion_email_task permission to 509
+[2026-10-27T04:33:51.427+0000] {task_command.py:423} INFO - Running <TaskInstance: m2_text_to_mysql_email_pipeline.send_completion_email_task manual__2026-10-27T04:33:42+00:00 [running]> on host e33fb884e951
+[2026-10-27T04:33:51.482+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='f1arl_engineer' AIRFLOW_CTX_DAG_ID='m2_text_to_mysql_email_pipeline' AIRFLOW_CTX_TASK_ID='send_completion_email_task' AIRFLOW_CTX_EXECUTION_DATE='2026-10-27T04:33:42+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-27T04:33:42+00:00'
+[2026-10-27T04:33:51.483+0000] {logging_mixin.py:188} INFO - ============================================================
+[2026-10-27T04:33:51.484+0000] {logging_mixin.py:188} INFO - [STATUS NOTIFICATION]: Airflow Job Complete - Text file Loaded into MYSQL
+[2026-10-27T04:33:51.485+0000] {logging_mixin.py:188} INFO - ============================================================
+[2026-10-27T04:33:51.486+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-10-27T04:33:51.491+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=m2_text_to_mysql_email_pipeline, task_id=send_completion_email_task, execution_date=20261027T043342, start_date=20261027T043351, end_date=20261027T043351
+[2026-10-27T04:33:51.522+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-10-27T04:33:51.536+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

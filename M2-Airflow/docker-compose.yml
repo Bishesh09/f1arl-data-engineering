@@ -1,0 +1,37 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: airflow_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: f1arl_db
+      MYSQL_USER: airflow_user
+      MYSQL_PASSWORD: airflow_pass
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  airflow:
+    image: apache/airflow:2.8.1-python3.10
+    container_name: airflow_runner
+    command: >
+      bash -c "pip install --no-cache-dir mysql-connector-python &&
+      airflow standalone"
+    restart: always
+    environment:
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION=False
+      - _AIRFLOW_WWW_USER_USERNAME=admin
+      - _AIRFLOW_WWW_USER_PASSWORD=admin
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./data:/opt/airflow/data
+      - ./logs:/opt/airflow/logs
+    depends_on:
+      - mysql
+
+volumes:
+  mysql_data:
